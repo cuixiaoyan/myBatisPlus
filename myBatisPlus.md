@@ -77,20 +77,107 @@ INSERT INTO user (id, name, age, email) VALUES
 3、编写项目，初始化项目！使用SpringBoot初始化！
 4、导入依赖
 
-```xml
+```yaml
  		testCompile group: 'junit', name: 'junit', version: '4.12'
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
-    //lombok
-    implementation 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+
     // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.1'
+
 ```
 
 说明：我们使用 mybatis-plus 可以节省我们大量的代码，尽量不要同时导入 mybatis 和 mybatis
 plus！版本的差异！
 5、连接数据库！这一步和 mybatis 相同！
+
+```yaml
+# mysql 5 驱动不同 com.mysql.jdbc.Driver
+# mysql 8 驱动不同com.mysql.cj.jdbc.Driver、需要增加时区的配置serverTimezone=GMT%2B8
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mybatisplus?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+```
+
+6、传统方式pojo-dao（连接mybatis，配置mapper.xml文件）-service-controller
+7、使用了mybatis-plus 之后
+
+- pojo
+
+```java
+package com.cxy.pojo;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+/**
+ * @program: myBatisPlus
+ * @description: 用户类
+ * @author: cuixy
+ * @create: 2020-08-02 11:02
+ **/
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+    private Long id;
+    private String name;
+    private Integer age;
+    private String email;
+}
+```
+
+- mapper接口
+
+```java
+package com.cxy.mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
+import User;
+// 在对应的Mapper上面继承基本的类 BaseMapper
+@Repository // 代表持久层
+public interface UserMapper extends BaseMapper<User> {
+    // 所有的CRUD操作都已经编写完成了
+    // 你不需要像以前的配置一大堆文件了！
+}
+```
+
+- 注意点，我们需要在主启动类上去扫描我们的mapper包下的所有接口
+  @MapperScan("com.cxy.mapper")
+
+```java
+package com.cxy;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+/**
+ * @program: myBatisPlus
+ * @description: 主启动类
+ * @author: cuixy
+ * @create: 2020-08-02 11:23
+ **/
+@SpringBootApplication
+//暂时加在这里。
+@MapperScan("com.cxy.mapper")
+public class myBatisPlusApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(myBatisPlusApplication.class, args);
+    }
+}
+```
+
+
+
+- 测试类中测试，注意路径。
+
+![image-20200802115528838](https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200802115528838.png)
+
+# 配置日志
 
