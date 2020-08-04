@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2020-08-02 11:23
  **/
 @SpringBootApplication
-@MapperScan("com.cxy.mapper")
 public class myBatisPlusApplication {
 
     public static void main(String[] args) {

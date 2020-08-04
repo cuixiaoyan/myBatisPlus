@@ -418,3 +418,141 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
 4、测试插入
 5、测试更新、观察时间即可！
+
+## 乐观锁
+
+乐观锁 : 故名思意十分乐观，它总是认为不会出现问题，无论干什么不去上锁！如果出现了问题，
+再次更新值测试
+悲观锁：故名思意十分悲观，它总是认为总是出现问题，无论干什么都会上锁！再去操作！
+
+我们这里主要讲解 乐观锁机制！
+乐观锁实现方式：
+
+- 取出记录时，获取当前 version
+- 更新时，带上这个version
+- 执行更新时， set version = newVersion where version = oldVersion
+- 如果version不对，就更新失败
+
+```sql
+乐观锁：1、先查询，获得版本号 version = 1
+-- A
+update user set name ="cuixiaoyan", version = version + 1
+where id = 2 and version = 1
+-- B 线程抢先完成，这个时候 version = 2，会导致 A 修改失败！
+update user set name ="cuixiaoyan", version = version + 1
+where id = 2 and version = 1
+```
+
+>测试一下MP的乐观锁插件
+
+1、给数据库中增加version字段！类型为int默认值为1。
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200804111823824.png" alt="image-20200804111823824" style="zoom:50%;" />
+
+2、我们实体类加对应的字段
+
+```java
+@Version //乐观锁Version注解
+private Integer version;
+```
+
+3、注册组件
+
+```java
+package com.cxy.config;
+
+import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+/**
+ * @program: myBatisPlus
+ * @description: mybatis配置类。
+ * @author: cuixy
+ * @create: 2020-08-04 11:21
+ **/
+@MapperScan("com.cxy.mapper")
+@Configuration//配置类
+@EnableTransactionManagement
+public class MyBatisPlusConfig {
+    // 注册乐观锁插件
+    @Bean
+    public OptimisticLockerInterceptor optimisticLockerInterceptor() {
+        return new OptimisticLockerInterceptor();
+    }
+
+}
+```
+
+4、测试一下！
+
+```java
+ /**
+     * 测试乐观锁成功
+     */
+    @Test
+    public void testOptimisticLockerSuccess() {
+        User user = userMapper.selectById(1L);
+        user.setName("cuxiaoyan444");
+        user.setEmail("22@1.com");
+        userMapper.updateById(user);
+    }
+```
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200804113057166.png" alt="image-20200804113057166" style="zoom:50%;" />
+
+5、失败测试
+
+```java
+/**
+     * 测试乐观锁失败
+     */
+    @Test
+    public void testOptimisticLockerError(){
+        //线程1
+        User user = userMapper.selectById(1L);
+        user.setName("cuxiaoyan555");
+        user.setEmail("22@1.com");
+        //线程2
+        User user1 = userMapper.selectById(1L);
+        user1.setName("cuxiaoyan666");
+        user1.setEmail("22@1.com");
+        //插队操作，执行成功。
+        userMapper.updateById(user1);
+        //则失败。
+        userMapper.updateById(user);
+    }
+```
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200804113800016.png" alt="image-20200804113800016" style="zoom:50%;" />
+
+## 查询操作
+
+```java
+/**
+     * 测试查询
+     */
+    @Test
+    public void testSelectById() {
+        System.out.println(userMapper.selectById(1L));
+    }
+
+    //测试批量查询
+    @Test
+    public void testSelectByBatchId() {
+        userMapper.selectBatchIds(Arrays.asList(1, 2, 3)).forEach(System.out::println);
+    }
+
+    //按条件查询之一，使用map操作
+    @Test
+    public void testSelectByBatchIds() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "cuxiaoyan666");
+        map.put("age", 18);
+        userMapper.selectByMap(map).forEach(System.out::println);
+    }
+
+```
+
