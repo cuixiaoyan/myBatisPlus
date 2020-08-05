@@ -556,3 +556,69 @@ public class MyBatisPlusConfig {
 
 ```
 
+## 分页查询
+
+1、原始的 limit 进行分页
+2、pageHelper 第三方插件
+3、MP 其实也内置了分页插件！
+
+> 如何使用？
+
+1、配置拦截器组件即可
+
+```java
+ //分页插件
+    @Bean
+    public PaginationInterceptor paginationInterceptor(){
+        return new PaginationInterceptor();
+    }
+```
+
+2、直接使用Page对象即可！
+
+```java
+ //分页测试
+    @Test
+    public void testPage() {
+        // 参数一：当前页
+        // 参数二：页面大小
+        // 使用了分页插件之后，所有的分页操作也变得简单的！
+        Page<User> userPage = new Page<>(1, 2);
+        userMapper.selectPage(userPage, null);
+        userPage.getRecords().forEach(System.out::println);
+        System.out.println(userPage.getTotal());
+
+    }
+```
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200805165506537.png" alt="image-20200805165506537" style="zoom:50%;" />
+
+## 删除操作
+
+1、根据 id 删除记录,物理删除，也就是直接删除记录。
+
+```java
+//测试删除，通过id删除
+    @Test
+    public void testDeleteById() {
+        System.out.println(userMapper.deleteById(1L));
+    }
+
+    //通过id批量删除
+    @Test
+    public void testDeleteBatchId() {
+        System.out.println(userMapper.deleteBatchIds(Arrays.asList(2L, 3L)));
+    }
+
+    //通过map删除
+    @Test
+    public void testDeleteMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "cuixiaoyan111");
+        System.out.println(userMapper.deleteByMap(map));
+
+    }
+```
+
+## 逻辑删除
+

@@ -1,5 +1,6 @@
 package com.cxy;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cxy.mapper.UserMapper;
 import com.cxy.pojo.User;
 import org.junit.jupiter.api.Test;
@@ -115,7 +116,39 @@ public class MybatisPlusApplicationTests {
         userMapper.selectByMap(map).forEach(System.out::println);
     }
 
+    //分页测试
+    @Test
+    public void testPage() {
+        // 参数一：当前页
+        // 参数二：页面大小
+        // 使用了分页插件之后，所有的分页操作也变得简单的！
+        Page<User> userPage = new Page<>(1, 2);
+        userMapper.selectPage(userPage, null);
+        userPage.getRecords().forEach(System.out::println);
+        System.out.println(userPage.getTotal());
 
+    }
+
+    //测试删除，通过id删除
+    @Test
+    public void testDeleteById() {
+        System.out.println(userMapper.deleteById(1L));
+    }
+
+    //通过id批量删除
+    @Test
+    public void testDeleteBatchId() {
+        System.out.println(userMapper.deleteBatchIds(Arrays.asList(2L, 3L)));
+    }
+
+    //通过map删除
+    @Test
+    public void testDeleteMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "cuixiaoyan111");
+        System.out.println(userMapper.deleteByMap(map));
+
+    }
 
 
 }
