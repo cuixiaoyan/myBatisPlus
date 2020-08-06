@@ -29,6 +29,8 @@ public class User {
     private Date updateTime;
     @Version //乐观锁Version注解
     private Integer version;
+    @TableLogic//逻辑删除
+    private Integer deleted;
 
 
 

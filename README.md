@@ -86,7 +86,8 @@ INSERT INTO user (id, name, age, email) VALUES
     compileOnly 'org.projectlombok:lombok:1.18.2'
 
     // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter
-    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
+    // compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
+       compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.0.5'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.1'
 
@@ -622,3 +623,80 @@ public class MyBatisPlusConfig {
 
 ## 逻辑删除
 
+>物理删除 ：从数据库中直接移除
+>逻辑删除 ：再数据库中没有被移除，而是通过一个变量来让他失效！ deleted = 0 => deleted = 1
+
+管理员可以查看被删除的记录！防止数据的丢失，类似于回收站！
+测试一下：
+1、在数据表中增加一个 deleted 字段
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200806164836118.png" alt="image-20200806164836118" style="zoom:50%;" />
+
+2、实体类中增加属性
+
+```java
+ 		@TableLogic//逻辑删除
+    private Integer deleted;
+```
+
+3、配置！
+
+```java
+// 逻辑删除组件！
+@Bean
+public ISqlInjector sqlInjector() {
+return new LogicSqlInjector();
+}
+```
+
+只需要配置yaml即可。
+
+```yaml
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: flag  # 全局逻辑删除的实体字段名
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+```
+
+4、测试删除！
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200806170648186.png" alt="image-20200806170648186" style="zoom:50%;" />
+
+# 性能分析插件
+
+我们在平时的开发中，会遇到一些慢sql。测试！ druid,,,,,
+作用：性能分析拦截器，用于输出每条 SQL 语句及其执行时间
+MP也提供性能分析插件，如果超过这个时间就停止运行！
+1、导入插件
+
+```java
+/**
+     * SQL执行效率插件
+     */
+    @Bean
+    @Profile({"dev","test"})// 设置 dev test 环境开启，保证我们的效率
+    public PerformanceInterceptor performanceInterceptor() {
+        PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
+        performanceInterceptor.setMaxTime(100); //ms 设置sql执行的最大时间，如果超过了则不执行
+        performanceInterceptor.setFormat(true);
+        return performanceInterceptor;
+    }
+```
+
+记住，要在SpringBoot中配置环境为dev或者 test 环境！
+
+```yaml
+spring:
+  profiles:
+    active: dev
+```
+
+2、测试使用。
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200806173953695.png" alt="image-20200806173953695" style="zoom:50%;" />
+
+使用性能分析插件，可以帮助我们提高效率！

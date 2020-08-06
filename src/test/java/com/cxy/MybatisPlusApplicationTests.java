@@ -132,7 +132,7 @@ public class MybatisPlusApplicationTests {
     //测试删除，通过id删除
     @Test
     public void testDeleteById() {
-        System.out.println(userMapper.deleteById(1L));
+        System.out.println(userMapper.deleteById(4L));
     }
 
     //通过id批量删除
@@ -147,8 +147,14 @@ public class MybatisPlusApplicationTests {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", "cuixiaoyan111");
         System.out.println(userMapper.deleteByMap(map));
-
     }
+
+    //测试性能分析插件
+    @Test
+    public void contextLoads(){
+        userMapper.selectList(null).forEach(System.out::println);
+    }
+
 
 
 }
