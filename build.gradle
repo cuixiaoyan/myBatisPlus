@@ -29,6 +29,9 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.1'
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     compile group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
+    // https://mvnrepository.com/artifact/org.apache.velocity/velocity-engine-core
+    compile group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.2'
+
 
 
 

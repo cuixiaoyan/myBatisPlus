@@ -700,3 +700,171 @@ spring:
 <img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200806173953695.png" alt="image-20200806173953695" style="zoom:50%;" />
 
 使用性能分析插件，可以帮助我们提高效率！
+
+## 条件构造器
+
+十分重要：Wrapper
+我们写一些复杂的sql就可以使用它来替代！
+
+<img src="https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200807211738207.png" alt="image-20200807211738207" style="zoom:50%;" />
+
+**测试**
+
+```java
+    //查询name不为空，邮箱不为空，年龄大于等于12的用户
+    @Test
+    public void test1(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.isNotNull("name").isNotNull("email").ge("age",12);
+        userMapper.selectList(userQueryWrapper).forEach(System.out::println);
+
+    }
+
+    //查询名字为cuixiaoyan的
+    @Test
+    public void test2(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("name","cuixiaoyan");
+        System.out.println(userMapper.selectOne(userQueryWrapper));
+
+    }
+
+    //查询年龄在20～30之间的
+    @Test
+    public void test3(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.between("age",20,30);
+        System.out.println(userMapper.selectCount(userQueryWrapper));
+    }
+
+    // 全模糊和右模糊查询
+    @Test
+    public void test4(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.notLike("name","cui").likeRight("email","m");
+        userMapper.selectMaps(userQueryWrapper).forEach(System.out::println);
+    }
+
+    //子查询
+    @Test
+    public void test5(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.inSql("id","select id from user where id > 3 ");
+        userMapper.selectObjs(userQueryWrapper).forEach(System.out::println);
+    }
+
+    //通过id排序,从大到小。
+    @Test
+    public void test6(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.orderByDesc("id");
+        userMapper.selectList(userQueryWrapper).forEach(System.out::println);
+    }
+```
+
+## 代码自动生成器
+
+dao、pojo、service、controller都给我自己去编写完成！
+AutoGenerator 是 MyBatis-Plus 的代码生成器，通过 AutoGenerator 可以快速生成 Entity、
+Mapper、Mapper XML、Service、Controller 等各个模块的代码，极大的提升了开发效率。
+测试：
+
+```java
+package com.cxy.utils;
+
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.po.TableFill;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+
+import java.util.ArrayList;
+
+/**
+ * @program: myBatisPlus
+ * @description: 代码生成器
+ * @author: cuixy
+ * @create: 2020-08-07 22:01
+ **/
+public class codeGeneration {
+
+    public static void main(String[] args) {
+        // 需要构建一个 代码自动生成器 对象
+        AutoGenerator mpg = new AutoGenerator();
+        // 配置策略
+        // 1、全局配置
+        GlobalConfig gc = new GlobalConfig();
+        String projectPath = System.getProperty("user.dir");
+        gc.setOutputDir(projectPath + "/src/main/java");
+        gc.setAuthor("cuixy");
+        gc.setOpen(false);
+        gc.setFileOverride(false); // 是否覆盖
+        gc.setServiceName("%sService"); // 去Service的I前缀
+        gc.setIdType(IdType.ID_WORKER);
+        gc.setDateType(DateType.ONLY_DATE);
+        gc.setSwagger2(true);
+        mpg.setGlobalConfig(gc);
+
+        //2、设置数据源
+        DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl("jdbc:mysql://192.168.106.129:3306/mybatisplus?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8");
+        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
+        dsc.setUsername("root");
+        dsc.setPassword("123456");
+        dsc.setDbType(DbType.MYSQL);
+        mpg.setDataSource(dsc);
+
+        //3、包的配置
+        PackageConfig pc = new PackageConfig();
+        pc.setModuleName("user");//模块名
+        pc.setParent("com.cxy");
+        pc.setEntity("entity");
+        pc.setMapper("mapper");
+        pc.setService("service");
+        pc.setController("controller");
+        mpg.setPackageInfo(pc);
+
+        //4、策略配置
+        StrategyConfig strategy = new StrategyConfig();
+        strategy.setInclude("user"); // 设置要映射的表名
+        strategy.setNaming(NamingStrategy.underline_to_camel);
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        strategy.setEntityLombokModel(true); // 自动lombok；
+        strategy.setLogicDeleteFieldName("deleted");
+
+        // 自动填充配置
+        TableFill gmtCreate = new TableFill("gmt_create", FieldFill.INSERT);
+        TableFill gmtModified = new TableFill("gmt_modified", FieldFill.INSERT_UPDATE);
+        ArrayList<TableFill> tableFills = new ArrayList<>();
+        tableFills.add(gmtCreate);
+        tableFills.add(gmtModified);
+        strategy.setTableFillList(tableFills);
+        // 乐观锁
+        strategy.setVersionFieldName("version");
+
+        strategy.setRestControllerStyle(true);
+        strategy.setControllerMappingHyphenStyle(true);
+        mpg.setStrategy(strategy);
+        mpg.execute(); //执行
+
+    }
+}
+```
+
+ps：如果报错，需要引入模版。
+
+```yaml
+		// https://mvnrepository.com/artifact/org.apache.velocity/velocity-engine-core
+    compile group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.2'
+```
+
+虽然有报错，是因为我并没有导入对应的包，所以报错，这里我进行了删除，因为后续没什么用。如果你正式项目中使用，肯定不会有问题，包是齐全的。
+
+![image-20200807221556514](https://gitee.com/cuixiaoyan/uPic/raw/master/uPic/image-20200807221556514.png)
+

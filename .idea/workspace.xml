@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a8e5871-cb8c-439c-b8aa-d7ce296ced65" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cxy/utils/codeGeneration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/cxy/config/MyBatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cxy/config/MyBatisPlusConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cxy/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cxy/pojo/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/com/cxy/MybatisPlusApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/cxy/MybatisPlusApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cxy/config/MyBatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cxy/config/MyBatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cxy/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cxy/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/cxy/MybatisPlusApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cxy/MybatisPlusApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,42 +49,47 @@
     <session id="447943179">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="java" value="27" />
+          <entry key="java" value="33" />
           <entry key="md" value="1" />
-          <entry key="yml" value="4" />
+          <entry key="yml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="27" />
+          <entry key="JAVA" value="33" />
           <entry key="Markdown" value="1" />
-          <entry key="YAML" value="4" />
+          <entry key="YAML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="42" />
-          <entry key="java" value="1678" />
+          <entry key="gradle" value="44" />
+          <entry key="java" value="2285" />
           <entry key="yml" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="42" />
-          <entry key="JAVA" value="1678" />
+          <entry key="Groovy" value="44" />
+          <entry key="JAVA" value="2285" />
           <entry key="YAML" value="163" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.core.usages.trigger">
+        <counts>
+          <entry key="actions.SpringChangeActiveProfiles" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -97,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="255">
+              <caret line="32" column="86" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="32" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -106,16 +108,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/cxy/MybatisPlusApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="153" column="65" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
+            <state relative-caret-position="210">
+              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3157#3158#0" expanded="true" />
-                <element signature="e#3218#3219#0" expanded="true" />
-                <element signature="e#3282#3283#0" expanded="true" />
-                <element signature="e#3366#3367#0" expanded="true" />
-                <element signature="e#3633#3634#0" expanded="true" />
-                <element signature="e#3705#3706#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/user/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,31 +132,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/config/MyBatisPlusConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1318#1319#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/pojo/User.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/utils/codeGeneration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="197">
+              <caret line="74" column="46" lean-forward="true" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,7 +172,12 @@
       <find>mybatis-plus</find>
       <find>plugins</find>
       <find>contextLoads</find>
+      <find>ContextConfiguration</find>
+      <find>TemplateConfig</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -386,9 +385,9 @@
     <option name="modificationStamps">
       <map>
         <entry key="$USER_HOME$/.gradle/init.gradle" value="2941796165" />
-        <entry key="$PROJECT_DIR$" value="6384242758000" />
+        <entry key="$PROJECT_DIR$" value="6384346123000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="419076483" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3928026762" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="1512991600" />
       </map>
@@ -572,10 +571,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cxy/handler/MyMetaObjectHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cxy/myBatisPlusApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cxy/pojo/User.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cxy/config/MyBatisPlusConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/cxy/MybatisPlusApplicationTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cxy/config/MyBatisPlusConfig.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cxy/utils/codeGeneration.java" />
       </list>
     </option>
   </component>
@@ -719,6 +719,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -759,7 +761,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cxy" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myBatisPlus" type="b2602c69:ProjectViewProjectNode" />
@@ -768,7 +770,38 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cxy" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myBatisPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myBatisPlus" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cxy" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myBatisPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myBatisPlus" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cxy" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myBatisPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myBatisPlus" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cxy" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myBatisPlus" type="b2602c69:ProjectViewProjectNode" />
@@ -802,22 +835,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="PaginationInterceptor&#9;PSI&#9;JAVA://com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596706782556" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596809783428" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="gradle.experimental" />
+    <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -831,8 +862,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MybatisPlusApplicationTests.contextLoads">
-    <configuration name="MybatisPlusApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MybatisPlusApplicationTests.test2">
+    <configuration name="codeGeneration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cxy.utils.codeGeneration" />
+      <module name="myBatisPlus_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cxy.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusApplicationTests.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myBatisPlus_test" />
       <extension name="coverage">
         <pattern>
@@ -842,13 +886,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cxy" />
       <option name="MAIN_CLASS_NAME" value="com.cxy.MybatisPlusApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MybatisPlusApplicationTests.testDeleteBatchId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MybatisPlusApplicationTests.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myBatisPlus_test" />
       <extension name="coverage">
         <pattern>
@@ -858,13 +902,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cxy" />
       <option name="MAIN_CLASS_NAME" value="com.cxy.MybatisPlusApplicationTests" />
-      <option name="METHOD_NAME" value="testDeleteBatchId" />
+      <option name="METHOD_NAME" value="test4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MybatisPlusApplicationTests.testDeleteById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MybatisPlusApplicationTests.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myBatisPlus_test" />
       <extension name="coverage">
         <pattern>
@@ -874,13 +918,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cxy" />
       <option name="MAIN_CLASS_NAME" value="com.cxy.MybatisPlusApplicationTests" />
-      <option name="METHOD_NAME" value="testDeleteById" />
+      <option name="METHOD_NAME" value="test5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MybatisPlusApplicationTests.testDeleteMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MybatisPlusApplicationTests.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myBatisPlus_test" />
       <extension name="coverage">
         <pattern>
@@ -890,23 +934,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cxy" />
       <option name="MAIN_CLASS_NAME" value="com.cxy.MybatisPlusApplicationTests" />
-      <option name="METHOD_NAME" value="testDeleteMap" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MybatisPlusApplicationTests.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myBatisPlus_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cxy" />
-      <option name="MAIN_CLASS_NAME" value="com.cxy.MybatisPlusApplicationTests" />
-      <option name="METHOD_NAME" value="testPage" />
+      <option name="METHOD_NAME" value="test6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -921,19 +949,19 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.myBatisPlusApplication" />
-      <item itemvalue="JUnit.MybatisPlusApplicationTests.testPage" />
-      <item itemvalue="JUnit.MybatisPlusApplicationTests.testDeleteById" />
-      <item itemvalue="JUnit.MybatisPlusApplicationTests.testDeleteBatchId" />
-      <item itemvalue="JUnit.MybatisPlusApplicationTests.testDeleteMap" />
-      <item itemvalue="JUnit.MybatisPlusApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.MybatisPlusApplicationTests.test4" />
+      <item itemvalue="JUnit.MybatisPlusApplicationTests.test5" />
+      <item itemvalue="JUnit.MybatisPlusApplicationTests.test6" />
+      <item itemvalue="Application.codeGeneration" />
+      <item itemvalue="JUnit.MybatisPlusApplicationTests.test2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MybatisPlusApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.MybatisPlusApplicationTests.testDeleteById" />
-        <item itemvalue="JUnit.MybatisPlusApplicationTests.testDeleteBatchId" />
-        <item itemvalue="JUnit.MybatisPlusApplicationTests.testDeleteMap" />
-        <item itemvalue="JUnit.MybatisPlusApplicationTests.testPage" />
+        <item itemvalue="JUnit.MybatisPlusApplicationTests.test2" />
+        <item itemvalue="Application.codeGeneration" />
+        <item itemvalue="JUnit.MybatisPlusApplicationTests.test6" />
+        <item itemvalue="JUnit.MybatisPlusApplicationTests.test5" />
+        <item itemvalue="JUnit.MybatisPlusApplicationTests.test4" />
       </list>
     </recent_temporary>
   </component>
@@ -956,49 +984,49 @@
       <workItem from="1596621421174" duration="639000" />
       <workItem from="1596702946496" duration="2666000" />
       <workItem from="1596705690201" duration="878000" />
+      <workItem from="1596807555165" duration="2143000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MybatisPlusApplicationTests_testSelectByBatchId - 2020.08.04 at 11h 45m 40s.xml">
-      <configuration name="MybatisPlusApplicationTests.testSelectByBatchId" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test1 - 2020.08.07 at 21h 36m 37s.xml">
+      <configuration name="MybatisPlusApplicationTests.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testSelectByBatchIds - 2020.08.04 at 11h 48m 24s.xml">
-      <configuration name="MybatisPlusApplicationTests.testSelectByBatchIds" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test1 - 2020.08.07 at 21h 37m 10s.xml">
+      <configuration name="MybatisPlusApplicationTests.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testSelectByBatchIds - 2020.08.04 at 11h 48m 42s.xml">
-      <configuration name="MybatisPlusApplicationTests.testSelectByBatchIds" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test1 - 2020.08.07 at 21h 39m 38s.xml">
+      <configuration name="MybatisPlusApplicationTests.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testPage - 2020.08.05 at 16h 53m 32s.xml">
-      <configuration name="MybatisPlusApplicationTests.testPage" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test1 - 2020.08.07 at 21h 40m 14s.xml">
+      <configuration name="MybatisPlusApplicationTests.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testDeleteById - 2020.08.05 at 17h 22m 43s.xml">
-      <configuration name="MybatisPlusApplicationTests.testDeleteById" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test2 - 2020.08.07 at 21h 46m 36s.xml">
+      <configuration name="MybatisPlusApplicationTests.test2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testDeleteBatchId - 2020.08.05 at 17h 24m 20s.xml">
-      <configuration name="MybatisPlusApplicationTests.testDeleteBatchId" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test3 - 2020.08.07 at 21h 48m 47s.xml">
+      <configuration name="MybatisPlusApplicationTests.test3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testDeleteMap - 2020.08.05 at 17h 32m 14s.xml">
-      <configuration name="MybatisPlusApplicationTests.testDeleteMap" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test4 - 2020.08.07 at 21h 52m 54s.xml">
+      <configuration name="MybatisPlusApplicationTests.test4" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testDeleteById - 2020.08.06 at 16h 59m 43s.xml">
-      <configuration name="MybatisPlusApplicationTests.testDeleteById" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test5 - 2020.08.07 at 21h 57m 00s.xml">
+      <configuration name="MybatisPlusApplicationTests.test5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testDeleteBatchId - 2020.08.06 at 17h 01m 09s.xml">
-      <configuration name="MybatisPlusApplicationTests.testDeleteBatchId" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test6 - 2020.08.07 at 21h 59m 14s.xml">
+      <configuration name="MybatisPlusApplicationTests.test6" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MybatisPlusApplicationTests_testDeleteById - 2020.08.06 at 17h 04m 29s.xml">
-      <configuration name="MybatisPlusApplicationTests.testDeleteById" configurationId="JUnit" />
+    <history-entry file="MybatisPlusApplicationTests_test6 - 2020.08.07 at 21h 59m 37s.xml">
+      <configuration name="MybatisPlusApplicationTests.test6" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17932000" />
+    <option name="totallyTimeSpent" value="20535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -1008,7 +1036,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36081082" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35994586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1018,9 +1046,9 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32702702" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32837838" />
+      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.32702702" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32972974" />
       <window_info anchor="bottom" id="JRebel Executor" order="15" />
       <window_info anchor="bottom" id="JRebel Console" order="16" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1037,6 +1065,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1082,13 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/myBatisPlusApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1165,36 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/cxy/MybatisPlusApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="153" column="65" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3157#3158#0" expanded="true" />
-            <element signature="e#3218#3219#0" expanded="true" />
-            <element signature="e#3282#3283#0" expanded="true" />
-            <element signature="e#3366#3367#0" expanded="true" />
-            <element signature="e#3633#3634#0" expanded="true" />
-            <element signature="e#3705#3706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/config/MyBatisPlusConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1203,6 +1204,74 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1273#1274#0" expanded="true" />
             <element signature="e#1318#1319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/myBatisPlusApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/user/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="32" column="86" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="32" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cxy/MybatisPlusApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/utils/codeGeneration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="74" column="46" lean-forward="true" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cxy/user/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1248,7 +1317,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1260,7 +1329,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>myBatisPlus_test|myBatisPlus</last-edited>
+          <last-edited>myBatisPlus_main|myBatisPlus</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

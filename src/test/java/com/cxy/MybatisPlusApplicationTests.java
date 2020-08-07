@@ -1,5 +1,6 @@
 package com.cxy;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cxy.mapper.UserMapper;
 import com.cxy.pojo.User;
@@ -154,6 +155,57 @@ public class MybatisPlusApplicationTests {
     public void contextLoads(){
         userMapper.selectList(null).forEach(System.out::println);
     }
+
+    //查询name不为空，邮箱不为空，年龄大于等于12的用户
+    @Test
+    public void test1(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.isNotNull("name").isNotNull("email").ge("age",12);
+        userMapper.selectList(userQueryWrapper).forEach(System.out::println);
+
+    }
+
+    //查询名字为cuixiaoyan的
+    @Test
+    public void test2(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("name","cuixiaoyan");
+        System.out.println(userMapper.selectOne(userQueryWrapper));
+
+    }
+
+    //查询年龄在20～30之间的
+    @Test
+    public void test3(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.between("age",20,30);
+        System.out.println(userMapper.selectCount(userQueryWrapper));
+    }
+
+    // 全模糊和右模糊查询
+    @Test
+    public void test4(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.notLike("name","cui").likeRight("email","m");
+        userMapper.selectMaps(userQueryWrapper).forEach(System.out::println);
+    }
+
+    //子查询
+    @Test
+    public void test5(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.inSql("id","select id from user where id > 3 ");
+        userMapper.selectObjs(userQueryWrapper).forEach(System.out::println);
+    }
+
+    //通过id排序,从大到小。
+    @Test
+    public void test6(){
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.orderByDesc("id");
+        userMapper.selectList(userQueryWrapper).forEach(System.out::println);
+    }
+
 
 
 
